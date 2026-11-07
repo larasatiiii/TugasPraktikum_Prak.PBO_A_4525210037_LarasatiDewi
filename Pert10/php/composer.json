@@ -1,0 +1,19 @@
+{
+    "name": "univpancasila/perpustakaan",
+    "description": "Sesi 10 - Exception Handling dan Pemrograman Defensif (PHP)",
+    "type": "project",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Perpustakaan\\": "src/"
+        }
+    },
+    "scripts": {
+        "start": "php Main.php"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

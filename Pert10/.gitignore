@@ -1,0 +1,8 @@
+# Java / Maven
+target/
+
+# PHP / Composer
+vendor/
+
+# Berkas hasil program
+laporan_buku.txt
