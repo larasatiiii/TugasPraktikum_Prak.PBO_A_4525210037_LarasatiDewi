@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <!--
+    Koordinat proyek: groupId + artifactId + version = alamat unik proyek.
+  -->
+  <groupId>id.ac.univpancasila.perpustakaan</groupId>
+  <artifactId>perpustakaan</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>Sistem Perpustakaan</name>
+  <description>Praktikum PBO sesi 9 — Informatika UP</description>
+
+  <properties>
+    <maven.compiler.release>25</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <!--
+      Dependensi eksternal: ascii-table untuk format tabel di terminal.
+    -->
+    <dependency>
+      <groupId>com.github.freva</groupId>
+      <artifactId>ascii-table</artifactId>
+      <version>1.8.0</version>
+    </dependency>
+
+    <!--
+      Sesi 11 — JUnit 5. scope=test: hanya tersedia saat pengujian dan
+      TIDAK ikut masuk ke berkas .jar hasil produksi.
+    -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!--
+        Plugin exec agar bisa menjalankan program dengan:
+            mvn exec:java -Dexec.mainClass=id.ac.univpancasila.perpustakaan.App
+      -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.5.0</version>
+      </plugin>
+
+      <!-- Sesi 11 — menjalankan pengujian lewat: mvn test -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.2</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
